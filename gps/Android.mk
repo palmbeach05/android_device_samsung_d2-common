@@ -21,11 +21,13 @@
 # are responsible for having their own logic, for fine-grained control.
 
 LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
 
+LOCAL_MODULE := gps.conf
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)
+LOCAL_SRC_FILES := gps.conf
 
-ifeq ($(BOARD_VENDOR),samsung)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
-endif
+include $(BUILD_PREBUILT)
 

@@ -1,4 +1,7 @@
-# Copyright (C) 2011 The Android Open Source Project
+#!/bin/bash
+#
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,9 +14,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+set -e
 
-# Inherit from d2-common device
-$(call inherit-product, device/samsung/d2-common/device.mk)
+# Required!
+export DEVICES="d2att"
+export DEVICE_COMMON=d2-common
+export BOARD_COMMON=msm8960-common
+export VENDOR=samsung
+
+if [ -z "$SETUP_DEVICE_COMMON_DIR" ]; then
+	export SETUP_DEVICE_COMMON_DIR=1
+fi
+if [ -z "$SETUP_BOARD_COMMON_DIR" ]; then
+	export SETUP_BOARD_COMMON_DIR=0
+fi
+
+./../../$VENDOR/$BOARD_COMMON/extract-files.sh $@

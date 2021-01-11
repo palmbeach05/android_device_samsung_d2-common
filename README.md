@@ -1,8 +1,13 @@
-Copyright 2012 - The CyanogenMod Project
+# android_device_samsung_d2att
+Device configuration for Samsung Galaxy S3 (AT&amp;T and Canadian model)
 
-Copyright 2017 - The LineageOS Project
+Copyright 2012 Cyanogenmod
 
-Device configuration for Galaxy S3 (Qualcomm Variants)
+Copyright 2017 LineageOS
+
+Copyright 2020 - Alexenferman
+
+TWRP device configuration for Galaxy S3 (Qualcomm Variants)
 =====================================
 
 Basic   | Spec Sheet
